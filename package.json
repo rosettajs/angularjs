@@ -1,0 +1,27 @@
+{
+  "name": "rosetta-angularjs",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/rosetta-angularjs.umd.js",
+  "module": "dist/rosetta-angularjs.es.js",
+  "scripts": {
+    "build": "rollup --config",
+    "dev": "rollup --config --watch",
+    "reload": "livereload 'examples/'",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npm-run-all --parallel dev reload"
+  },
+  "author": "Alejandro García Iglesias",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-angularjs-annotate": "^0.8.2",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "livereload": "^0.6.3",
+    "npm-run-all": "^4.1.2",
+    "rollup": "^0.55.3",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-uglify": "^3.0.0",
+    "rollup-watch": "^4.3.1"
+  }
+}
