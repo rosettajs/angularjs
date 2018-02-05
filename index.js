@@ -1,14 +1,32 @@
-class RosettaAngularjs {}
+import camelCase from 'camelcase';
 
-angular
-  .module('rosetta-angularjs', [])
-  .provider('rosetta', function() {
-    const map = {};
+class RosettaAngularjs {
+  static add(mod, list) {
+    if (!Array.isArray(list)) {
+      list = [list];
+    }
+    list.forEach(item => {
+      Object.keys(item).forEach(name => {
+        const constructor = item[name];
+        name = camelCase(name);
+        angular
+          .module(mod)
+          .directive(name, ($parse) => {
+            'ngInject';
+            return {
+              link(scope, element, attrs) {
+                const options = $parse(attrs[name + 'Options'])(scope);
+                const instance = new constructor(element[0], options);
+                const instanceRefName = attrs[name + 'Instance'];
+                if (instanceRefName) {
+                  scope[instanceRefName] = instance;
+                }
+              },
+            };
+          });
+      });
+    });
+  };
+}
 
-    this.add = (module, value) => {
-      map[module] = map[module] ? map[module].push(value) : [value];
-      console.log('rosettaProvider.add', value, map);
-    };
-
-    this.$get = () => new RosettaAngularjs;
-  });
+export default RosettaAngularjs;
