@@ -1,4 +1,4 @@
-# Rosetta
+# Rosetta-Angularjs
 
 This project codenamed Rosetta aims to define a basic API for JavaScript libraries and to abstract
 the implementation of modern framework components. In other words, you could load any JavaScript
@@ -6,18 +6,11 @@ library implementing the API and use it as a component in Angular.js, React, etc
 any extra plugin other than the Rosetta proxy. The concept is currently in very early development
 stage. Feedback and any other type of help is appreciated.
 
-## Angular.js example
+## Rosetta-Angularjs example
 
 ```javascript
-import 'rosetta-angularjs';
-import Swiper from 'swiper';
-import Tooltip from 'tooltip';
-
-angular
-  .module('app', ['rosetta-angularjs'])
-  .config(['rosettaProvider', (rosettaProvider) => {
-    rosettaProvider.add('app', [Swiper, Tooltip]);
-  }]);
+angular.module('app', []);
+RosettaAngularjs.add('app', [{Swiper}, {Tooltip}]);
 ```
 
 Then in your templates you can use the libraries as Angular.js directives:
@@ -41,12 +34,3 @@ Then in your templates you can use the libraries as Angular.js directives:
   ...
 </button>
 ```
-
-## Roadmap
-
-* Document the universal API for libraries to adopt
-* Implement a proxy for Angular.js
-* Implement a proxy for React
-* Implement a proxy for Angular
-* Implement a proxy for Vue
-* Implement a proxy for Ember? Polymer?
