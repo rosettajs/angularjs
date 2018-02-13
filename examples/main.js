@@ -1,2 +1,2 @@
 angular.module('app', []);
-RosettaAngularjs.add('app', [{Swiper}, {tippy}]);
+RosettaAngularjs.add('app', {Swiper, tippy});

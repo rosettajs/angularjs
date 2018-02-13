@@ -10,7 +10,7 @@ stage. Feedback and any other type of help is appreciated.
 
 ```javascript
 angular.module('app', []);
-RosettaAngularjs.add('app', [{Swiper}, {Tooltip}]);
+RosettaAngularjs.add('app', {Swiper, Tooltip});
 ```
 
 Then in your templates you can use the libraries as Angular.js directives:

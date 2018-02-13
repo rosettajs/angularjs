@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "main": "dist/rosetta-angularjs.umd.js",
-  "module": "dist/rosetta-angularjs.es.js",
+  "module": "dist/rosetta-angularjs.esm.js",
   "scripts": {
     "build": "rollup --config",
     "dev": "rollup --config --watch",
@@ -27,6 +27,8 @@
     "rollup-watch": "^4.3.1"
   },
   "dependencies": {
-    "camelcase": "^4.1.0"
+    "camelcase": "^4.1.0",
+    "lodash.forown": "^4.4.0",
+    "lodash.isplainobject": "^4.0.6"
   }
 }

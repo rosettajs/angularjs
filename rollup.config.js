@@ -8,7 +8,7 @@ export default [
     input: 'index.js',
     output: [
       {
-        file: 'dist/rosetta-angularjs.es.js',
+        file: 'dist/rosetta-angularjs.esm.js',
         format: 'es',
       },
       {
