@@ -16,12 +16,14 @@ class RosettaAngularjs {
           'ngInject';
           return {
             link(scope, element, attrs) {
-              const options = $parse(attrs[name + 'Options'])(scope);
-              const instance = new item(element[0], options);
-              const instanceRefName = attrs[name + 'Instance'];
-              if (instanceRefName) {
-                scope[instanceRefName] = instance;
-              }
+              scope.$evalAsync(() => {
+                const options = $parse(attrs[name + 'Options'])(scope);
+                const instance = new item(element[0], options);
+                const instanceRefName = attrs[name + 'Instance'];
+                if (instanceRefName) {
+                  scope[instanceRefName] = instance;
+                }
+              });
             },
           };
         });

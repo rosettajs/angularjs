@@ -751,12 +751,14 @@ var RosettaAngularjs = function () {
 
           return {
             link: function link(scope, element, attrs) {
-              var options = $parse(attrs[name + 'Options'])(scope);
-              var instance = new item(element[0], options);
-              var instanceRefName = attrs[name + 'Instance'];
-              if (instanceRefName) {
-                scope[instanceRefName] = instance;
-              }
+              scope.$evalAsync(function () {
+                var options = $parse(attrs[name + 'Options'])(scope);
+                var instance = new item(element[0], options);
+                var instanceRefName = attrs[name + 'Instance'];
+                if (instanceRefName) {
+                  scope[instanceRefName] = instance;
+                }
+              });
             }
           };
         }]);
