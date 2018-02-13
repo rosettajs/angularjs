@@ -1,6 +1,6 @@
 {
   "name": "rosetta-angularjs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Use any JavaScript library as an Angular.js directive.",
   "main": "dist/rosetta-angularjs.umd.js",
   "module": "dist/rosetta-angularjs.esm.js",
