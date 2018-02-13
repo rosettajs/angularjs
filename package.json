@@ -1,6 +1,6 @@
 {
   "name": "rosetta-angularjs",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "",
   "main": "dist/rosetta-angularjs.umd.js",
   "module": "dist/rosetta-angularjs.esm.js",
